@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <script>
+
+        function display(name){
+            alert("Hello "+name);
+        }
+        function greet(name,callback){
+            callback(name);
+        }
+        greet("Maulik",display);
+    </script> -->
+    <!-- <script>
+        function varTest(){
+            var x=1;
+            if(true){
+                var x=2;
+                console.log(x);
+            }
+            console.log(x);
+        }
+        varTest();
+        function letTest(){
+            let x=1;
+            if(true){
+                let x=2;
+                console.log(x);
+            }
+            console.log(x);
+        }
+        letTest();
+    </script>    -->
+
+    <!-- <script>
+        function greet(name="Guest"){
+            alert("Hello "+name);
+        }
+        greet();
+        greet("Maulik");
+    </script> -->
+
+    <!-- <script>
+        function sum(a,b,c){
+            return a+b+c;
+        }
+        let numbers=[1,2,3];
+        console.log(sum(...numbers));
+    </script> -->
+
+    <!-- <script>
+        let arr=[1,2,3,4,5];
+        for(let num of arr){
+            console.log(num);
+        }   
+    </script> -->
+
+    <!-- <script>
+        let arr=[1,2,3];
+        let [a,b,c]=arr;
+        console.log(a,b,c);
+
+        let obj={
+            name:"Maulik",
+            age:21
+        }
+        let {name,age}=obj;
+        console.log(name,age);      
+    </script> -->
+
+    <!-- <script>
+        let greet=(name)=>{
+            alert("Hello "+name);
+        }
+        greet("Maulik");
+    </script> -->
+
+    <!-- <script>
+        class Person{
+            constructor(name,age){
+                this.name=name;
+                this.age=age;
+            }
+            greet(){
+                alert("Hello "+this.name);
+            }
+        }
+        let person1=new Person("Maulik",21);
+        person1.greet();
+    </script> -->
+
+    <!-- <script>
+    let canvas = document.getElementById("game");
+    let ctx = canvas.getContext("2d");
+
+    let box = 20;
+
+    let snake = [
+        {
+            x: 200,
+            y: 200
+        }
+    ];
+
+    let direction = "RIGHT";
+
+    let food = {
+        x: Math.floor(Math.random() * 20) * box,
+        y: Math.floor(Math.random() * 20) * box
+    };
+
+    document.addEventListener("keydown", changeDirection);
+
+    function changeDirection(event) {
+
+        if (event.key == "ArrowUp" && direction != "DOWN") {
+            direction = "UP";
+        }
+
+        if (event.key == "ArrowDown" && direction != "UP") {
+            direction = "DOWN";
+        }
+
+        if (event.key == "ArrowLeft" && direction != "RIGHT") {
+            direction = "LEFT";
+        }
+
+        if (event.key == "ArrowRight" && direction != "LEFT") {
+            direction = "RIGHT";
+        }
+    }
+
+    function drawGame() {
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Draw snake
+        for (let i = 0; i < snake.length; i++) {
+            ctx.fillStyle = "green";
+            ctx.fillRect(
+                snake[i].x,
+                snake[i].y,
+                box,
+                box
+            );
+        }
+
+        // Draw food
+        ctx.fillStyle = "red";
+        ctx.fillRect(food.x, food.y, box, box);
+
+        let headX = snake[0].x;
+        let headY = snake[0].y;
+
+        if (direction == "UP")
+            headY -= box;
+
+        if (direction == "DOWN")
+            headY += box;
+
+        if (direction == "LEFT")
+            headX -= box;
+
+        if (direction == "RIGHT")
+            headX += box;
+
+        // Check food
+        if (headX == food.x && headY == food.y) {
+
+            food = {
+                x: Math.floor(Math.random() * 20) * box,
+                y: Math.floor(Math.random() * 20) * box
+            };
+
+        } else {
+            snake.pop();
+        }
+
+        // Check boundary
+        if (
+            headX < 0 ||
+            headY < 0 ||
+            headX >= canvas.width ||
+            headY >= canvas.height
+        ) {
+            clearInterval(game);
+            alert("Game Over");
+            return;
+        }
+
+        let newHead = {
+            x: headX,
+            y: headY
+        };
+
+        snake.unshift(newHead);
+    }
+
+    let game = setInterval(drawGame, 150);
+</script> -->
+
+    <!-- <script>
+    // Prevent right-click menu
+    document.addEventListener("contextmenu", function(event) {
+        event.preventDefault();
+    });
+
+    document.addEventListener("mousedown", function(event) {
+
+        if (event.button == 0) {
+            alert("Left Clicked");
+        }
+
+        if (event.button == 2) {
+            alert("Right Clicked");
+        }
+
+    });
+</script> -->
+
+    <!-- <script>
+    let checkboxes =
+        document.querySelectorAll("input[type='checkbox']");
+
+    checkboxes.forEach(function(checkbox) {
+
+        checkbox.addEventListener("change", function() {
+
+            let selected = [];
+
+            checkboxes.forEach(function(item) {
+
+                if (item.checked) {
+                    selected.push(item.value);
+                }
+
+            });
+
+            document.getElementById("result").innerHTML =
+                selected.join(", ");
+
+        });
+
+    });
+</script> -->
+  </body>
+</html>
